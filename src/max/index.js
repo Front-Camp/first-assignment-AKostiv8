@@ -9,7 +9,7 @@
 const max = arr => {
 		var maxnum = arr[0];
   for (var i = 0; i < arr.length; i++) { 
-		if(maxnum > arr[i]){
+		if(maxnum < arr[i]){
 			maxnum = arr[i];
 		}
 	}
