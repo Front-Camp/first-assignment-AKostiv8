@@ -10,7 +10,14 @@
 * sum(-1, 13); // 12
 */
 const sum = (a, b) => {
-  /* your logic here...*/
+	 if(typeof a == 'number' && typeof b == 'number'){
+		 var number = a+b;
+		return number;
+	}else{
+		var error = 'You should enter only numbers';
+		return error;
+	}
+	
 };
 
 export default sum;
