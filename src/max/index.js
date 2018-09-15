@@ -11,7 +11,7 @@ const max = arr => {
 	for (var i = 0; i < arr.length; i++) { 
 		if((arr[i] === Infinity) || (arr[i] === -Infinity)){
 			arr[i] = 1;
-			
+		}
 		if(isNaN(arr[i])){
 			arr[i] = 2;	
 		}
@@ -25,6 +25,7 @@ const max = arr => {
 	}
 	
 	return maxnum;
-};
+}
+
 
 export default max;
