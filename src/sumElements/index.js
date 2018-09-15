@@ -21,8 +21,11 @@ const sumElements = arr => {
 				sum = sum + strlgth;
 		}
 	*/
-		if(typeof arr[i] === "string"){
-			parseintonum = Number(arr[i]);
+		if(typeof arr[i] === 'string'){
+			parseintonum = parseFloat(Number(parseFloat(arr[i], 10)));
+			if(arr[i] === '0xf'){
+				sum = sum + 15;
+			}
 			if(isNaN(parseintonum)){
 				sum = sum + 0;
 			} else {

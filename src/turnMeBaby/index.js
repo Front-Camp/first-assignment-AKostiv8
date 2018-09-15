@@ -11,7 +11,8 @@ const turnMeBaby = str => {
 	if(typeof str == 'string'){
 		return str.split("").reverse().join("");
 	} else {
-		throw undefined;
+		return new Error('this is not a string');
+		return str.split("").reverse().join("");
 	}
 };
 
