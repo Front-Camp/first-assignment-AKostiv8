@@ -11,22 +11,40 @@
  * sumElements([Infinity, NaN, 1]); // 1
  */
 const sumElements = arr => {
-	var sum = 0;	
-  for (var i = 0; i < arr.length; i++) { 
-		if(typeof arr[i] == "number"){
-			sum = sum + arr[i];
-		}else{
-			if(typeof arr[i] == "string"){
+	var sum = 0;
+	var parseintonum;
+	for (var i = 0; i < arr.length; i++) {
+
+	/*	if(typeof arr[i] == "string"){
 				var strlgth;
 				strlgth = arr[i].length;
 				sum = sum + strlgth;
-			}else{
-				if(arr[i] == "Infinity" || arr[i] == "NaN"){
-					sum = sum + 0;
-				}
+		}
+	*/
+		if(typeof arr[i] === "string"){
+			parseintonum = Number(arr[i]);
+			if(isNaN(parseintonum)){
+				sum = sum + 0;
+			} else {
+				sum = parseintonum + sum;
 			}
 		}
+
+
+		if(arr[i] === Infinity || arr[i] === -Infinity){
+			arr[i] = 0;
+		}
+
+		if(isNaN(arr[i])){
+			arr[i] = 0
+		}
+
+		if(typeof arr[i] === 'number'){
+			sum = sum + arr[i];
+		}
+
 	}
+
 	return sum;
 };
 

@@ -7,12 +7,23 @@
 * max([-1, 0]);   // 0
 */
 const max = arr => {
-		var maxnum = arr[0];
-  for (var i = 0; i < arr.length; i++) { 
-		if(maxnum < arr[i]){
-			maxnum = arr[i];
+	
+	for (var i = 0; i < arr.length; i++) { 
+		if((arr[i] === Infinity) || (arr[i] === -Infinity)){
+			arr[i] = 1;
+			
+		if(isNaN(arr[i])){
+			arr[i] = 2;	
 		}
 	}
+	
+		var maxnum = arr[0];
+    for (var j = 0; j < arr.length; j++) { 
+		if(maxnum < arr[j]){
+			maxnum = arr[j];
+		}
+	}
+	
 	return maxnum;
 };
 

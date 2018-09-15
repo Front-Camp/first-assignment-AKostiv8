@@ -10,12 +10,16 @@
 * sum(-1, 13); // 12
 */
 const sum = (a, b) => {
+	
+	if(a == Infinity || a == -Infinity || isNaN(a) || b == Infinity || b == -Infinity || isNaN(b)){
+		throw new Error;
+	}else{
 	 if(typeof a == 'number' && typeof b == 'number'){
 		 var number = a+b;
 		return number;
 	}else{
-		var error = 'You should enter only numbers';
-		return error;
+		throw new Error;
+	}
 	}
 	
 };

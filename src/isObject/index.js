@@ -8,20 +8,18 @@
  * isObject(null); // false
  */
 const isObject = data => {
+	
+	if(data == null){
+		return false;
+	}
+	if(Array.isArray(data) == true){
+		return false;
+	}			
+	
 	if(typeof data == 'object'){
 		return true;
 	}else{
-		if(data == null){
-			return false;
-		} else {
-			if(Array.isArray(data) == true){
-				return false;
-				
-			}else{
-				return false;
-			}
-		}
-		
+		return false;
 	}
 };
 
